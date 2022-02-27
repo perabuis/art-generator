@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Slider from "./components/Slider.js";
+import Tile from "./components/Tile.js";
 
 function App() {
+  const [r, setR] = useState(200);
+  const [g, setG] = useState(200);
+  const [b, setB] = useState(200);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ backgroundColor: `rgb(${r},${g},${b})`, color: `rgb(${255 - r},${255 - g},${255 - b})` }}>
+      <Tile />
+      <Slider label="R" max={255} value={r} onValueChange={(value) => setR(value)} />
+      <Slider label="G" max={255} value={g} onValueChange={(value) => setG(value)} />
+      <Slider label="B" max={255} value={b} onValueChange={(value) => setB(value)} />
     </div>
   );
 }
