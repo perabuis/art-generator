@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+.een {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-left: 4rem;
+  background-color: red;
+}
 
 @keyframes App-logo-spin {
   from {

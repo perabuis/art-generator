@@ -1,11 +1,26 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
+import chroma from "chroma-js";
 
 const Tile = ({}) => {
   const r = useStore(state => state.r);
+  const testColor = chroma.random().hex();
+  console.log(testColor);
+  
+  const testScale = chroma.scale([(testColor), '#0f0']).colors(4);
+  console.log(testScale);
   console.log(r);
   return (
     <>
+    <p className="een" style={{
+          backgroundColor: testScale[0]}}>test</p>
+    <p className="een" style={{
+          backgroundColor: testScale[1]}}>test</p>
+          <p className="een" style={{
+          backgroundColor: testScale[2]}}>test</p>
+             <p className="een" style={{
+          backgroundColor: testScale[3]}}>test</p>
+
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="10%" height="10%">
       <defs>
         <style>
