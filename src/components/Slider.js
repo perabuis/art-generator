@@ -1,31 +1,27 @@
 import PropTypes from "prop-types";
 
-const Slider = ({ onValueChange, value, max, min, label }) => {
+
+const Slider = ({ onValueChange, value}) => {
+  console.log(value);
   return (
-    <label>
-      <span>{label}</span>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={value}
-        onChange={(e) => onValueChange(parseInt(e.target.value, 10))}
-      />
-      <span>{value}</span>
-    </label>
+    <>
+     <input type="color" id="head" name="head"
+           value={value} onChange={(e) => onValueChange(e.target.value)}></input>
+           </>
+    
   );
 };
 
 Slider.defaultProps = {
-  min: 0
+  //min: 0
 }
 
 Slider.propTypes = {
-  onValueChange: PropTypes.func.isRequired,
+ /* onValueChange: PropTypes.func.isRequired,
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,*/
 };
 
 export default Slider;
