@@ -7,11 +7,6 @@ import Tile from "./components/Tile.js";
 import { useStore } from "./store";
 
 function App() {
-  //const firstColor = useStore(state => state.colors.primary);
-  //const setFirstColor = useStore(state => state.setFirstColor);
-
-//const width = useStore(state => state.width);
-//console.log(width);
 
   return (
     <>

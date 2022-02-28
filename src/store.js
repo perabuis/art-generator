@@ -10,7 +10,7 @@ const useStore = create(set => ({
         tmp[name] = value;
         return { ...state, colors: tmp };
   }),
- // width: window.innerWidth,
+ 
 }))
 
 export { useStore }
