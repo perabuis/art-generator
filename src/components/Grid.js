@@ -1,22 +1,23 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
+import Tile from "./Tile.js";
 
 
-const Slider = () => {
+const Grid = () => {
  
   return (
     <>  
-   
+   <Tile />
            </>
     
   );
 };
 
-Slider.defaultProps = {
+Grid.defaultProps = {
   //min: 0
 }
 
-Slider.propTypes = {
+Grid.propTypes = {
  /* onValueChange: PropTypes.func.isRequired,
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
@@ -24,4 +25,4 @@ Slider.propTypes = {
   label: PropTypes.string.isRequired,*/
 };
 
-export default Slider;
+export default Grid;

@@ -3,9 +3,12 @@ import { useStore } from "../store";
 import chroma from "chroma-js";
 
 const Tile = ({}) => {
-  const firstColor = useStore(state => state.firstColor);
-  const secondColor = useStore(state => state.secondColor);
-  const colorScale = chroma.scale([(firstColor), (secondColor)]).colors(3);
+  const colors = useStore(state => state.colors);
+  
+  //const firstColor = useStore(state => state.firstColor);
+  //const secondColor = useStore(state => state.secondColor);
+  const colorScale = chroma.scale([(colors.primary), (colors.secondary)]).colors(3);
+ // const testcolor = chroma.blend((colors.primary), (colors.secondary), 'multiply');
   //const randomColor = chroma.random().hex();
   const tileStyling1 = {
     fill: colorScale[0],
@@ -13,7 +16,7 @@ const Tile = ({}) => {
     strokeMiterlimit:10
   };
   const tileStyling2 = {
-    fill:  colorScale[1]
+    fill: colorScale[1]
   };
   const tileStyling3 = {
     fill:  colorScale[2]
@@ -22,15 +25,6 @@ const Tile = ({}) => {
 
   return (
     <>
-    <p className="een" style={{
-          backgroundColor: colorScale[0]}}>test</p>
-    <p className="een" style={{
-          backgroundColor: colorScale[1]}}>test</p>
-          <p className="een" style={{
-          backgroundColor: colorScale[2]}}>test</p>
-             <p className="een" style={{
-          backgroundColor: colorScale[3]}}>test</p>
-
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="10%" height="10%">
       <defs>
         <style>
@@ -46,11 +40,7 @@ const Tile = ({}) => {
         <path style={tileStyling2} d="M251.02 248.84 499.33.53h.52v62.64L313.82 249.21l186.15 186.16v62.64h-.52L251.13 249.7v-.34h-.11v-.52z"/>
         <path style={tileStyling3} d="m66.58.77 184.08 184.08v-.44L434.54.53h-60.91L250.46 123.71v.04L127.49.77H66.58zm432.33 187.89-60.64 61.16 61.19 61.19v60.89L377.37 249.82l121.54-122.07v60.91z"/>
       </g>
-    </svg>
-
-
-
-           
+    </svg>           
     </>
   );
 };

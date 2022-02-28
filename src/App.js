@@ -1,19 +1,23 @@
 import { useState } from "react";
+import Color from "./components/Color.js";
 import Slider from "./components/Slider.js";
+import Grid from "./components/Grid.js";
 import Tile from "./components/Tile.js";
+//import Dimensions from "./components/Dimensions";
 import { useStore } from "./store";
 
 function App() {
-  const firstColor = useStore(state => state.firstColor);
-  const setFirstColor = useStore(state => state.setFirstColor);
-   const secondColor = useStore(state => state.secondColor);
-  const setSecondColor = useStore(state => state.setSecondColor);
+  //const firstColor = useStore(state => state.colors.primary);
+  //const setFirstColor = useStore(state => state.setFirstColor);
+
+//const width = useStore(state => state.width);
+//console.log(width);
 
   return (
     <>
-      <Slider value={firstColor} onValueChange={(value) => setFirstColor(value)} />
-      <Slider value={secondColor} onValueChange={(value) => setSecondColor(value)} />
-      <Tile />
+      <Color value='primary' />    
+      <Color value='secondary' />  
+      <Grid />
     </>
   );
 }

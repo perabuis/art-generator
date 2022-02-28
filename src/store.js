@@ -1,10 +1,16 @@
-import create from 'zustand'
+import create from 'zustand';
 
 const useStore = create(set => ({
-  firstColor: 235204,
-  setFirstColor: (firstColor) => set(state => ({firstColor})),
-  secondColor: 235204,
-  setSecondColor: (secondColor) => set(state => ({secondColor}))
+  colors : {
+    primary: '#000000',
+    secondary: '#ffffff'
+  },
+  setColors : (name, value) => set(state => {
+        const tmp = {...state.colors};
+        tmp[name] = value;
+        return { ...state, colors: tmp };
+  }),
+ // width: window.innerWidth,
 }))
 
 export { useStore }
