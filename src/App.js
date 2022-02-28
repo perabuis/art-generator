@@ -4,20 +4,17 @@ import Tile from "./components/Tile.js";
 import { useStore } from "./store";
 
 function App() {
-  const r = useStore(state => state.r);
-  const setR = useStore(state => state.setR);
-  
- // const toggleShowDislikes = useStore(state => state.toggleShowDislikes)
-  const [a, setA] = useState('#A23345');
-  const [g, setG] = useState(200);
-  const [b, setB] = useState(200);
+  const firstColor = useStore(state => state.firstColor);
+  const setFirstColor = useStore(state => state.setFirstColor);
+   const secondColor = useStore(state => state.secondColor);
+  const setSecondColor = useStore(state => state.setSecondColor);
 
   return (
-    <div style={{ backgroundColor: `rgb(${r},${g},${b})`, color: `rgb(${255 - r},${255 - g},${255 - b})` }}>
-      <Slider value={r} onValueChange={(value) => setR(value)} />
+    <>
+      <Slider value={firstColor} onValueChange={(value) => setFirstColor(value)} />
+      <Slider value={secondColor} onValueChange={(value) => setSecondColor(value)} />
       <Tile />
-   
-    </div>
+    </>
   );
 }
 

@@ -1,10 +1,10 @@
 import create from 'zustand'
 
 const useStore = create(set => ({
-  name: "James",
-  setName: (name) => set(state => ({ name })),
-  r: 2,
-  setR: (r) => set(state => ({r}))
+  firstColor: 235204,
+  setFirstColor: (firstColor) => set(state => ({firstColor})),
+  secondColor: 235204,
+  setSecondColor: (secondColor) => set(state => ({secondColor}))
 }))
 
 export { useStore }
