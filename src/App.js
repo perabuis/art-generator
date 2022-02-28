@@ -10,8 +10,9 @@ function App() {
 
   return (
     <>
-      <Color value='primary' />    
-      <Color value='secondary' />  
+      <Color name='primary' />    
+      <Color name='secondary' />  
+      <Color name='tertiary' />  
       <Grid />
     </>
   );

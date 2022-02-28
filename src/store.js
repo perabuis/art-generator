@@ -2,8 +2,9 @@ import create from 'zustand';
 
 const useStore = create(set => ({
   colors : {
-    primary: '#000000',
-    secondary: '#ffffff'
+    primary: '#ffff00',
+    secondary: '#000000',
+    tertiary: '#ffffff'
   },
   setColors : (name, value) => set(state => {
         const tmp = {...state.colors};

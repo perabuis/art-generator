@@ -9,13 +9,14 @@ const Grid = () => {
  
   return (
     <>  
-    <svg viewBox="0 0 500 500" width="10%" height="10%">
+    <svg viewBox="0 0 100 100">
       <defs>
         <style>
           {`.cls-2{fill:#0d0d0d}.cls-3{fill:#eae5e7}`}
         </style>
       </defs>
-      <Tile />
+      <Tile x="20"/>
+       <Tile x="2" />
       
     </svg>
            </>

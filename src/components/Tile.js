@@ -1,32 +1,38 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
-import chroma from "chroma-js";
+//import chroma from "chroma-js";
 
-const Tile = ({}) => {
+const Tile = ({x}) => {
+
   const colors = useStore(state => state.colors);
+
   
   //const firstColor = useStore(state => state.firstColor);
   //const secondColor = useStore(state => state.secondColor);
-  const colorScale = chroma.scale([(colors.primary), (colors.secondary)]).colors(3);
+ // const colorScale = chroma.scale([(colors.primary), (colors.secondary)]).colors(3);
  // const testcolor = chroma.blend((colors.primary), (colors.secondary), 'multiply');
   //const randomColor = chroma.random().hex();
+  /* const tileStyling = {
+    scale: 0.2,
+    transform:`translate(${x}, 10)`
+
+  }*/
   const tileStyling1 = {
-    fill: colorScale[0],
+    fill: colors.primary,
     stroke:'#000',
     strokeMiterlimit:10
   };
   const tileStyling2 = {
-    fill: colorScale[1]
+    fill: colors.secondary
   };
   const tileStyling3 = {
-    fill:  colorScale[2]
+    fill:  colors.tertiary
   };
-  
+  //transform={`translate(${x},10) scale(0.02)`}
 
   return (
     <>
-   
-      <g>
+      <g  transform={`translate(${x},10) scale(0.02)`}>
         <path style={tileStyling1} d="M.51.35h498.95V499.3H.51z"/>
         <path style={tileStyling2} d="M249.46 248.72 1.15.41H.63v62.64l186.03 186.04L.51 435.25v62.64h.52l248.31-248.3v-.34h.12v-.53z"/>
         <path style={tileStyling3} d="M434.54 499.24 250.46 315.16v.44L66.58 499.48h60.91L250.66 376.3v-.04l122.97 122.98h60.91zM1.23 310.32l60.64-61.16L.68 187.97v-60.9l122.09 122.09L1.23 371.23v-60.91z"/>
