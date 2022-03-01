@@ -28,19 +28,24 @@ const Tile = ({x}) => {
   const tileStyling3 = {
     fill:  colors.tertiary
   };
+  const screenWidth = window.innerWidth;
+  console.log(screenWidth / 2);
+  
   //transform={`translate(${x},10) scale(0.02)`}
 
   return (
     <>
-      <g  transform={`translate(${x},10) scale(0.02)`}>
-        <path style={tileStyling1} d="M.51.35h498.95V499.3H.51z"/>
-        <path style={tileStyling2} d="M249.46 248.72 1.15.41H.63v62.64l186.03 186.04L.51 435.25v62.64h.52l248.31-248.3v-.34h.12v-.53z"/>
-        <path style={tileStyling3} d="M434.54 499.24 250.46 315.16v.44L66.58 499.48h60.91L250.66 376.3v-.04l122.97 122.98h60.91zM1.23 310.32l60.64-61.16L.68 187.97v-60.9l122.09 122.09L1.23 371.23v-60.91z"/>
-        <path d="M189.5 499.48h122.11l-61.05-61.06-61.06 61.06zM311.61.53H189.5l61.06 61.06L311.61.53z" 
-        style={tileStyling2}/>
-        <path style={tileStyling2} d="M251.02 248.84 499.33.53h.52v62.64L313.82 249.21l186.15 186.16v62.64h-.52L251.13 249.7v-.34h-.11v-.52z"/>
-        <path style={tileStyling3} d="m66.58.77 184.08 184.08v-.44L434.54.53h-60.91L250.46 123.71v.04L127.49.77H66.58zm432.33 187.89-60.64 61.16 61.19 61.19v60.89L377.37 249.82l121.54-122.07v60.91z"/>
-      </g>      
+        <g  transform={` scale(0.05) translate(${x},10)`}>
+        <rect style={tileStyling1} x="0.27" y="0.26" width="99.47" height="99.47"/>
+        <polygon style={tileStyling2} points="49.9 49.78 0.4 0.27 0.29 0.27 0.29 12.76 37.38 49.85 0.27 86.97 0.27 99.45 0.37 99.45 49.88 49.95 49.88 49.88 49.9 49.88 49.9 49.78"/>
+        <polygon style={tileStyling3} points="86.8 99.45 50.1 62.75 50.1 62.83 13.44 99.49 25.58 99.49 50.14 74.93 50.14 74.93 74.66 99.45 86.8 99.45"/>
+        <polygon style={tileStyling3} points="0.53 62.24 12.73 49.87 0.53 37.67 0.53 25.52 24.87 49.87 0.53 74.27 0.53 62.24"/>
+        <polygon style={tileStyling2} points="37.95 99.77 62.29 99.77 50.12 87.6 37.95 99.77"/>
+        <polygon style={tileStyling2} points="62.29 0.3 37.95 0.3 50.12 12.47 62.29 0.3"/>
+        <polygon style={tileStyling2} points="50.21 49.8 99.72 0.3 99.82 0.3 99.82 12.79 62.73 49.88 99.84 86.99 99.84 99.48 99.74 99.48 50.24 49.97 50.24 49.91 50.21 49.91 50.21 49.8"/>
+        <polygon style={tileStyling3} points="13.44 0.52 50.14 37.22 50.14 37.13 86.8 0.47 74.66 0.47 50.1 25.03 50.1 25.04 25.58 0.52 13.44 0.52"/>
+        <polygon style={tileStyling3} points="99.48 37.56 87.28 49.93 99.48 62.13 99.48 74.27 75.14 49.93 99.48 25.52 99.48 37.56"/>
+        </g>
     </>
   );
 };

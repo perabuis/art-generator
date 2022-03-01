@@ -1,13 +1,25 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
 
+import './Slider.css';
 
-const Slider = () => {
+const Slider = ({value, onValueChange}) => {
  
   return (
-    <>  
+    <>   
+    <label>
+      <span>size</span>
+      <input
+        type="range"
+        min={1}
+        max={10}
+        value={value}
+        onChange={(e) => onValueChange(parseInt(e.target.value, 10))}
+      />
+      <span>{value}</span>
+    </label>
    
-           </>
+    </>
     
   );
 };
@@ -25,3 +37,21 @@ Slider.propTypes = {
 };
 
 export default Slider;
+
+
+/*
+const Slider = ({ onValueChange, value, max, min, label }) => {
+  return (
+    <label>
+      <span>{label}</span>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(e) => onValueChange(parseInt(e.target.value, 10))}
+      />
+      <span>{value}</span>
+    </label>
+  );
+};*/

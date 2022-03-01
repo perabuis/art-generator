@@ -2,7 +2,7 @@ import create from 'zustand';
 
 const useStore = create(set => ({
   colors : {
-    primary: '#ffff00',
+    primary: '#3c51a2',
     secondary: '#000000',
     tertiary: '#ffffff'
   },
@@ -11,6 +11,8 @@ const useStore = create(set => ({
         tmp[name] = value;
         return { ...state, colors: tmp };
   }),
+  cols: 10,
+  setCols: (cols) => set(state => ({ cols})),
  
 }))
 
