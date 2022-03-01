@@ -2,10 +2,17 @@ import PropTypes from "prop-types";
 import { useStore } from "../store";
 //import chroma from "chroma-js";
 
-const Tile = ({x}) => {
+const Tile = ({index}) => {
+    const colors = useStore(state => state.colors);
 
-  const colors = useStore(state => state.colors);
+    const cols = useStore(state => state.cols);
+    const size = cols * 10;
+    const xPosition = index % cols;
+    const x = xPosition * size;
+    console.log(x);
 
+
+  //const y = Math.floor(index / cols);
   
   //const firstColor = useStore(state => state.firstColor);
   //const secondColor = useStore(state => state.secondColor);
@@ -31,8 +38,6 @@ const Tile = ({x}) => {
   const screenWidth = window.innerWidth;
   console.log(screenWidth / 2);
   
-  //transform={`translate(${x},10) scale(0.02)`}
-
   return (
     <>
         <g  transform={` scale(0.05) translate(${x},10)`}>

@@ -3,7 +3,9 @@ import { useStore } from "../store";
 
 import './Slider.css';
 
-const Slider = ({value, onValueChange}) => {
+const Slider = ({}) => {
+  const cols = useStore(state => state.cols);
+  const setCols = useStore(state => state.setCols);
  
   return (
     <>   
@@ -12,11 +14,11 @@ const Slider = ({value, onValueChange}) => {
       <input
         type="range"
         min={1}
-        max={10}
-        value={value}
-        onChange={(e) => onValueChange(parseInt(e.target.value, 10))}
+        max={20}
+        value={cols}
+        onChange={(e) => setCols(parseInt(e.target.value, 10))}
       />
-      <span>{value}</span>
+      <span>{cols}</span>
     </label>
    
     </>

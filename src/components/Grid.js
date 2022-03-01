@@ -4,8 +4,10 @@ import Tile from "./Tile.js";
 import { useState } from "react";
 
 const Grid = () => {
+
  const width =  window.innerWidth;
  console.log(width);
+  const cols = useStore(state => state.cols);
   const [tiles, setTiles] = useState(new Array(20).fill(false));
   console.log(tiles);
  //    boxes.map((filled, i) => <Box filled={filled} index={i} key={i} cols={10} size={10} onClick={() => handleBoxClick(i)} />)
@@ -19,7 +21,7 @@ const Grid = () => {
         </style>
       </defs>
       {
-      tiles.map((filled, i) => <Tile key={i} x = {i*110}/>)
+      tiles.map((filled, i) => <Tile index = {i} key={i}/>)
       }
       
     </svg>

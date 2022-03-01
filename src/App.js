@@ -8,15 +8,14 @@ import { useStore } from "./store";
 import './App.css';
 
 function App() {
-  const cols = useStore(state => state.cols);
-  const setCols = useStore(state => state.setCols);
+ 
   
   return (
     <>
       <Color name='primary' />    
       <Color name='secondary' />  
       <Color name='tertiary' /> 
-      <Slider value={cols} onValueChange={(value) => setCols(value)}/>  
+      <Slider />  
       <Grid />
     </>
   );
