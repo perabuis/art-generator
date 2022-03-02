@@ -12,12 +12,15 @@ const Tile = ({index}) => {
     console.log(x);*/
 
     const sliderInput = useStore(state => state.cols);
-    const windowWidth =  window.innerWidth;
-   // const size = windowWidth / sliderInput;
-    const xBreedte = 100 / sliderInput;
-    const scale = xBreedte / 100;
+    //const windowWidth =  window.innerWidth;
+
+    const size = 100 / sliderInput;
+    const scale = size / 100;
     let xPosition = index % sliderInput;
-     xPosition = xPosition * xBreedte;
+    xPosition = xPosition * size;
+
+    let yPosition = Math.floor(index / sliderInput);
+    yPosition = yPosition * size;
 
 
   //const y = Math.floor(index / cols);
@@ -43,7 +46,7 @@ const Tile = ({index}) => {
   
   return (
     <>
-        <g  transform={` translate(${xPosition},10) scale(${scale}) `}>
+        <g  transform={` translate(${xPosition},${yPosition}) scale(${scale}) `}>
         <rect style={tileStyling1} x="0.27" y="0.26" width="99.47" height="99.47"/>
         <polygon style={tileStyling2} points="49.9 49.78 0.4 0.27 0.29 0.27 0.29 12.76 37.38 49.85 0.27 86.97 0.27 99.45 0.37 99.45 49.88 49.95 49.88 49.88 49.9 49.88 49.9 49.78"/>
         <polygon style={tileStyling3} points="86.8 99.45 50.1 62.75 50.1 62.83 13.44 99.49 25.58 99.49 50.14 74.93 50.14 74.93 74.66 99.45 86.8 99.45"/>
