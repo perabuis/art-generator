@@ -4,10 +4,12 @@ import Tile from "./Tile.js";
 import { useState } from "react";
 
 const Grid = () => {
-
+//berekenen hoeveel tiles er in de array moeten
  const width =  window.innerWidth;
- console.log(width);
+ const height = window.innerHeight;
+ console.log(height);
   const cols = useStore(state => state.cols);
+  //nu vul ik met 20 tegels maar eigenlijk moeth et userinput * userinput
   const [tiles, setTiles] = useState(new Array(20).fill(false));
   console.log(tiles);
  //    boxes.map((filled, i) => <Box filled={filled} index={i} key={i} cols={10} size={10} onClick={() => handleBoxClick(i)} />)

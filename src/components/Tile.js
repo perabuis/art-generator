@@ -5,20 +5,23 @@ import { useStore } from "../store";
 const Tile = ({index}) => {
     const colors = useStore(state => state.colors);
 
-    const cols = useStore(state => state.cols);
+    /*const cols = useStore(state => state.cols);
     const size = cols * 10;
     const xPosition = index % cols;
     const x = xPosition * size;
-    console.log(x);
+    console.log(x);*/
+
+    const sliderInput = useStore(state => state.cols);
+    const windowWidth =  window.innerWidth;
+   // const size = windowWidth / sliderInput;
+    const xBreedte = 100 / sliderInput;
+    const scale = xBreedte / 100;
+    let xPosition = index % sliderInput;
+     xPosition = xPosition * xBreedte;
 
 
   //const y = Math.floor(index / cols);
-  
-  //const firstColor = useStore(state => state.firstColor);
-  //const secondColor = useStore(state => state.secondColor);
- // const colorScale = chroma.scale([(colors.primary), (colors.secondary)]).colors(3);
- // const testcolor = chroma.blend((colors.primary), (colors.secondary), 'multiply');
-  //const randomColor = chroma.random().hex();
+
   /* const tileStyling = {
     scale: 0.2,
     transform:`translate(${x}, 10)`
@@ -40,7 +43,7 @@ const Tile = ({index}) => {
   
   return (
     <>
-        <g  transform={` scale(0.05) translate(${x},10)`}>
+        <g  transform={` translate(${xPosition},10) scale(${scale}) `}>
         <rect style={tileStyling1} x="0.27" y="0.26" width="99.47" height="99.47"/>
         <polygon style={tileStyling2} points="49.9 49.78 0.4 0.27 0.29 0.27 0.29 12.76 37.38 49.85 0.27 86.97 0.27 99.45 0.37 99.45 49.88 49.95 49.88 49.88 49.9 49.88 49.9 49.78"/>
         <polygon style={tileStyling3} points="86.8 99.45 50.1 62.75 50.1 62.83 13.44 99.49 25.58 99.49 50.14 74.93 50.14 74.93 74.66 99.45 86.8 99.45"/>
