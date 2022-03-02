@@ -11,8 +11,11 @@ const useStore = create(set => ({
         tmp[name] = value;
         return { ...state, colors: tmp };
   }),
-  cols: 10,
+  cols: 5,
   setCols: (cols) => set(state => ({ cols})),
+  tiles: new Array(25).fill(false),
+  setTiles: (tiles) => set(state => ({ tiles})),
+  //const [tiles, setTiles] = useState(new Array(numberOfTiles).fill(false));
  
 }))
 

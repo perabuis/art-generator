@@ -7,10 +7,22 @@ const Grid = () => {
 //berekenen hoeveel tiles er in de array moeten
  const width =  window.innerWidth;
  const height = window.innerHeight;
- console.log(height);
+
+ const sliderInput = useStore(state => state.cols);
+
+ 
   const cols = useStore(state => state.cols);
   //nu vul ik met 20 tegels maar eigenlijk moeth et userinput * userinput
-  const [tiles, setTiles] = useState(new Array(20).fill(false));
+
+
+ const tiles = useStore(state => state.tiles);
+  const numberOfTiles = sliderInput * sliderInput;
+const setTiles = useStore(state => state.numberOfTiles);
+
+
+  //const [tiles, setTiles] = useState(new Array(numberOfTiles).fill(false));
+
+
   console.log(tiles);
  //    boxes.map((filled, i) => <Box filled={filled} index={i} key={i} cols={10} size={10} onClick={() => handleBoxClick(i)} />)
  

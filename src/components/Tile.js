@@ -12,6 +12,8 @@ const Tile = ({index}) => {
     console.log(x);*/
 
     const sliderInput = useStore(state => state.cols);
+    
+   
     //const windowWidth =  window.innerWidth;
 
     const size = 100 / sliderInput;

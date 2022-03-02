@@ -6,7 +6,17 @@ import './Slider.css';
 const Slider = ({}) => {
   const cols = useStore(state => state.cols);
   const setCols = useStore(state => state.setCols);
+
+  const setTiles = useStore(state => state.setTiles);
+
+  const handleSliderChange = (e) => {
+    const sliderInput = parseInt(e.target.value, 10)
+    setCols(sliderInput);
+    console.log(parseInt(e.target.value,10))
+    setTiles(new Array(sliderInput * sliderInput).fill(false));
+  };
  
+  //setCols(parseInt(e.target.value, 10)
   return (
     <>   
     <label>
@@ -16,7 +26,7 @@ const Slider = ({}) => {
         min={1}
         max={20}
         value={cols}
-        onChange={(e) => setCols(parseInt(e.target.value, 10))}
+        onChange={(e) => handleSliderChange(e)}
       />
       <span>{cols}</span>
     </label>
