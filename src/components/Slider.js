@@ -10,9 +10,8 @@ const Slider = ({}) => {
   const setTiles = useStore(state => state.setTiles);
 
   const handleSliderChange = (e) => {
-    const sliderInput = parseInt(e.target.value, 10)
+    const sliderInput = parseInt(e.target.value, 10);
     setCols(sliderInput);
-    console.log(parseInt(e.target.value,10))
     setTiles(new Array(sliderInput * sliderInput).fill(false));
   };
  
