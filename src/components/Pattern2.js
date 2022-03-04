@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
 
+const randomColor = require('randomcolor'); // import the script
+const strangeColor = randomColor();
+const strangeColor2 = randomColor();
+
 
 const Pattern2 = ({index}) => {
     const colors = useStore(state => state.colors);
@@ -14,25 +18,26 @@ const Pattern2 = ({index}) => {
     let yPosition = Math.floor(index / sliderInput);
     yPosition = yPosition * size;
 
+
     //determine style
     const tileStyling1 = {
-      fill: '#bdccd4'
+      fill: colors.tertiary,
+      stroke: colors.secondary,
+      strokeMiterlimit:10,
+      strokeWidth:0.5
     };
     const tileStyling2 = {
-      fill: '#1c1f36'
+         fill: colors.secondary
     };
     const tileStyling3 = {
-      fill:  '#477163'
+         fill: colors.primary
     };
     
     const tileStyling4 = {
-      fill:'#fff',
-      stroke: '#000',
-      strokeMiterlimit:10,
-      strokeWidth:0.5
+      fill: strangeColor,
     }
   const tileStyling5 = {
-      fill:'#60342b'
+      fill: strangeColor2
     }
 
     let  rotation = '';
@@ -58,8 +63,8 @@ const Pattern2 = ({index}) => {
   return (
     <>
          <g   transform={` translate(${xPosition},${yPosition}) scale(${scale}) ${rotation}`} >
-      
-<rect style={tileStyling1} x="0.25" y="0.25" width="99.49" height="99.5"/>
+   
+<rect style={tileStyling1} x="0.25" y="0.25" width="99.49" height="99.5"></rect>
 <polygon style={tileStyling2} points="73.81 62.32 75.36 65.56 78.72 66.86 77.53 70.25 78.98 73.54 75.74 75.1 74.45 78.45 71.05 77.26 67.77 78.72 66.21 75.47 62.85 74.18 64.05 70.79 62.59 67.5 65.83 65.94 67.12 62.59 70.52 63.78 73.81 62.32"/>
 <path style={tileStyling3} d="M87.87,68.87c-2.06.11-7.52-2.8-7.52-2.8s1.41-5.71,2.75-7.14c1-1.1,5.47-2.63,5.47-2.63L93.7,60l-.35,6.29S89.37,68.79,87.87,68.87Z"/>
 <path style={tileStyling3} d="M81.68,57.32c-1.38,1.54-7.29,3.34-7.29,3.34s-3-5-3.11-7c0-1.5,2-5.73,2-5.73l6.21-1,4.19,4.7S82.68,56.2,81.68,57.32Z"/>
@@ -70,11 +75,11 @@ const Pattern2 = ({index}) => {
 <path style={tileStyling3} d="M72.42,87.56C72.31,85.5,75.21,80,75.21,80s5.71,1.41,7.15,2.75c1.1,1,2.63,5.48,2.63,5.48l-3.66,5.12L75.05,93S72.5,89.06,72.42,87.56Z"/>
 <path style={tileStyling3} d="M59.9,83.78c1.38-1.53,7.3-3.34,7.3-3.34s3,5,3.11,7c0,1.5-2,5.73-2,5.73l-6.2,1-4.2-4.7S58.9,84.9,59.9,83.78Z"/>
 <polygon style={tileStyling2} points="99.5 11.3 95.22 16.32 94.16 9.82 87.95 12.03 90.27 5.87 83.78 4.68 88.88 0.5 99.49 0.5 99.5 11.3"/>
-<rect style={tileStyling4} x="0.25" y="0.25" width="99.49" height="99.5"/>
-<polygon points="59.32 23.14 53.92 18.37 53.8 11.39 67.82 4.8 83.57 4.72 73.34 16.56 59.32 23.14"/>
-<polygon points="71.63 37.91 64.9 35.34 62.33 28.85 73.15 17.76 87.86 12.14 82.44 26.82 71.63 37.91"/>
-<polygon points="89.05 46.45 81.84 46.42 77.14 41.26 83.34 27.06 95.11 16.61 95.24 32.25 89.05 46.45"/>
-<polygon points="82.13 0.5 67.82 4.66 52.33 4.66 49.45 0.5 82.13 0.5"/>
+{/*<rect style={tileStyling4} x="0.25" y="0.25" width="99.49" height="99.5"/> */}
+<polygon style={tileStyling4} points="59.32 23.14 53.92 18.37 53.8 11.39 67.82 4.8 83.57 4.72 73.34 16.56 59.32 23.14"/>
+<polygon style={tileStyling4} points="71.63 37.91 64.9 35.34 62.33 28.85 73.15 17.76 87.86 12.14 82.44 26.82 71.63 37.91"/>
+<polygon style={tileStyling4} points="89.05 46.45 81.84 46.42 77.14 41.26 83.34 27.06 95.11 16.61 95.24 32.25 89.05 46.45"/>
+<polygon style={tileStyling4} points="82.13 0.5 67.82 4.66 52.33 4.66 49.45 0.5 82.13 0.5"/>
 <polygon style={tileStyling3} points="33.3 20.96 34.85 24.2 38.21 25.5 37.02 28.89 38.48 32.18 35.23 33.74 33.94 37.09 30.55 35.9 27.26 37.36 25.7 34.12 22.34 32.82 23.54 29.43 22.08 26.14 25.32 24.58 26.61 21.23 30.01 22.42 33.3 20.96"/>
 <path style={tileStyling2} d="M47.36,27.51c-2.06.11-7.52-2.8-7.52-2.8s1.41-5.71,2.75-7.14c1-1.1,5.48-2.63,5.48-2.63l5.12,3.65-.35,6.29S48.86,27.43,47.36,27.51Z"/>
 <path style={tileStyling2} d="M41.17,16c-1.37,1.54-7.29,3.34-7.29,3.34s-3.05-5-3.11-7c-.05-1.5,2-5.73,2-5.73l6.21-1,4.2,4.7S42.18,14.84,41.17,16Z"/>
@@ -91,18 +96,18 @@ const Pattern2 = ({index}) => {
 <path style={tileStyling5} d="M50.78,99.5H65.47S61.82,95,60,94.27c-1.38-.56-6.07-.12-6.07-.12Z"/>
 <path style={tileStyling5} d="M99.51,50.9V65.59S95,61.94,94.28,60.12c-.56-1.38-.12-6.07-.12-6.07Z"/>
 <path style={tileStyling5} d="M99.51,90.09V75.4S95,79.05,94.28,80.87c-.56,1.38-.12,6.07-.12,6.07Z"/>
-<polygon points="99.49 17.89 95.33 32.21 95.33 47.7 99.49 50.57 99.49 17.89"/>
+<polygon style={tileStyling4} points="99.49 17.89 95.33 32.21 95.33 47.7 99.49 50.57 99.49 17.89"/>
 <polygon style={tileStyling2} points="0.49 88.7 4.76 83.68 5.83 90.18 12.04 87.97 9.72 94.13 16.2 95.32 11.11 99.5 0.5 99.5 0.49 88.7"/>
-<polygon points="40.67 76.86 46.07 81.64 46.19 88.61 32.16 95.2 16.42 95.28 26.64 83.44 40.67 76.86"/>
-<polygon points="28.36 62.09 35.09 64.66 37.66 71.15 26.84 82.25 12.13 87.86 17.54 73.18 28.36 62.09"/>
-<polygon points="10.94 53.55 18.15 53.58 22.84 58.74 16.65 72.94 4.87 83.39 4.75 67.75 10.94 53.55"/>
-<polygon points="17.86 99.5 32.17 95.34 47.66 95.34 50.54 99.5 17.86 99.5"/>
+<polygon style={tileStyling4} points="40.67 76.86 46.07 81.64 46.19 88.61 32.16 95.2 16.42 95.28 26.64 83.44 40.67 76.86"/>
+<polygon style={tileStyling4} points="28.36 62.09 35.09 64.66 37.66 71.15 26.84 82.25 12.13 87.86 17.54 73.18 28.36 62.09"/>
+<polygon style={tileStyling4} points="10.94 53.55 18.15 53.58 22.84 58.74 16.65 72.94 4.87 83.39 4.75 67.75 10.94 53.55"/>
+<polygon style={tileStyling4} points="17.86 99.5 32.17 95.34 47.66 95.34 50.54 99.5 17.86 99.5"/>
 <path style={tileStyling5} d="M10,.5H24.71S21.06,5,19.24,5.73c-1.38.56-6.07.12-6.07.12Z"/>
 <polygon style={tileStyling2} points="8.75 0.5 6.3 6.21 0.48 8.66 0.5 0.5 8.75 0.5"/>
 <path style={tileStyling5} d="M49.21.5H34.52S38.17,5,40,5.73c1.38.56,6.07.12,6.07.12Z"/>
 <path style={tileStyling5} d="M.48,49.1V34.41S5,38.06,5.71,39.88c.56,1.38.12,6.07.12,6.07Z"/>
 <path style={tileStyling5} d="M.48,9.91V24.6S5,21,5.71,19.13c.56-1.38.12-6.07.12-6.07Z"/>
-<polygon points="0.5 82.11 4.66 67.79 4.66 52.3 0.5 49.43 0.5 82.11"/>
+<polygon style={tileStyling4} points="0.5 82.11 4.66 67.79 4.66 52.3 0.5 49.43 0.5 82.11"/>
 </g>
     </>
   );

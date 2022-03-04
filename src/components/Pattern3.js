@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
 
-
 const Pattern3 = ({index}) => {
     const colors = useStore(state => state.colors);
     const sliderInput = useStore(state => state.cols);
@@ -14,35 +13,32 @@ const Pattern3 = ({index}) => {
     let yPosition = Math.floor(index / sliderInput);
   
    
-    //check Y position or i? 
+    //Rotation and yPosition
     let rotation = 'scale(1,-1)';
-          if (yPosition % 2 == 0){
+        if (yPosition % 2 == 0){
           yPosition =  (yPosition * size) + size;
-          rotation = 'scale(1,-1)'
+          rotation = 'scale(1,-1)';
         }
-           else{
-              yPosition =  (yPosition * size)
-         // yPosition = yPosition + size;
-          rotation = 'scale(1,1)'
+          else{
+            yPosition =  (yPosition * size);
+            rotation = 'scale(1,1)';
         }
-
-
-   ;
-    //rotation
-
 
     //determine style
     const tileStyling1 = {
-        fill: colors.primary
+      stroke: colors.primary,
+      strokeMiterLimit: 10,
+      strokeWidth: 0.3,
+      fill: colors.tertiary
     };
     const tileStyling2 = {
+      stroke: colors.primary,
+      strokeMiterLimit: 10,
+      strokeWidth: 0.3,
       fill: colors.secondary
     };
 
-     
-  //scale(1,-1)
-  return (
-    
+  return (    
     <>
       <g  transform={` translate(${xPosition},${yPosition}) scale(${scale}) ${rotation}`} >
         <polygon style={tileStyling1} points="50 50.04 50 100 0 100 0 0.04 50 50.04"/>
