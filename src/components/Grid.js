@@ -6,7 +6,7 @@ import Pattern3 from "./Pattern3.js";
 import Pattern4 from "./Pattern4.js";
 
 
-import './Grid.css';
+//import './Grid.css';
 
 const Grid = () => {
 //number of svg's for mobile
@@ -41,7 +41,7 @@ if(height > width){
 
   return (
     <> 
-    <svg viewBox="0 0 100 100">
+    <svg viewBox="0 0 100 100" id="tilePattern">
       <defs>
         <style>
           {`.cls-1{fill:#3c51a2;stroke:#000;stroke-miterlimit:10;stroke-width:0.5px;}.cls-2{fill:#0c0d0d;}.cls-3{fill:#e9e4e6;}`}

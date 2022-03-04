@@ -18,7 +18,7 @@ const Slider = ({}) => {
   return (
     <>   
     <label>
-      <span>size</span>
+      <span></span>
       <input
         type="range"
         min={1}
@@ -26,7 +26,7 @@ const Slider = ({}) => {
         value={cols}
         onChange={(e) => handleSliderChange(e)}
       />
-      <span>{cols}</span>
+      <span>{cols} rows and colums</span>
     </label>
    
     </>

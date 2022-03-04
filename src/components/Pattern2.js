@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
 
-const randomColor = require('randomcolor'); // import the script
+const randomColor = require('randomcolor');
 const strangeColor = randomColor();
 const strangeColor2 = randomColor();
 
