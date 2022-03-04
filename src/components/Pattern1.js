@@ -13,50 +13,19 @@ const Pattern1 = ({index}) => {
     xPosition = xPosition * size;
     let yPosition = Math.floor(index / sliderInput);
     yPosition = yPosition * size;
-    //determine pattern and style
 
-    //twee classes aanmaken, een voor de kleuren en dan nog specifiek per patroon
-    
-
-
-  const tileStyling1 = {
-    fill: colors.primary,
-    stroke:'#000',
-    strokeMiterlimit:10
-  };
-  const tileStyling2 = {
-    fill: colors.secondary
-  };
-  const tileStyling3 = {
-    fill:  colors.tertiary
-  };
- /* const tileStyling1 = {
-    fill: '#bdccd4'
-  };
-  const tileStyling2 = {
-    fill: '#1c1f36'
-  };
-  const tileStyling3 = {
-    fill:  '#477163'
-  };
-  
-  const tileStyling4 = {
-    fill:'#fff',
-    stroke: '#000',
-    strokeMiterlimit:10,
-    strokeWidth:0.5
-  }
- const tileStyling5 = {
-    fill:'#60342b'
-  }*/
-
-  const screenWidth = window.innerWidth;
-  console.log(screenWidth / 2);
-
-
-
-  //Hier of statement met telkens wat er in de <g> tag zit
-
+    //styling tiles
+    const tileStyling1 = {
+      fill: colors.primary,
+      stroke:'#000',
+      strokeMiterlimit:10
+    };
+    const tileStyling2 = {
+      fill: colors.secondary
+    };
+    const tileStyling3 = {
+      fill:  colors.tertiary
+    };
   
   return (
     <>

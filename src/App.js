@@ -1,23 +1,23 @@
 import { useState } from "react";
 import Color from "./components/Color.js";
 import Slider from "./components/Slider.js";
-import Grid from "./components/Grid.js";
-import Tile from "./components/Pattern1.js";
-//import Dimensions from "./components/Dimensions";
-import { useStore } from "./store";
-import './App.css';
 import Radio from "./components/Radio.js";
+import Grid from "./components/Grid.js";
+
+import './App.css';
 
 function App() {
  
   
   return (
     <>
+    {/*input components*/}
       <Color name='primary' />    
       <Color name='secondary' />  
       <Color name='tertiary' /> 
       <Slider />  
-       <Radio />  
+      <Radio />  
+    {/*show grid*/}
       <Grid />
     </>
   );

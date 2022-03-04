@@ -2,50 +2,42 @@ import PropTypes from "prop-types";
 import { useStore } from "../store";
 import Pattern1 from "./Pattern1.js";
 import Pattern2 from "./Pattern2.js";
-import { useState } from "react";
+import Pattern3 from "./Pattern3.js";
+import Pattern4 from "./Pattern4.js";
+
+
+import './Grid.css';
 
 const Grid = () => {
-//berekenen hoeveel tiles er in de array moeten
+//number of svg's for mobile
  const width =  window.innerWidth;
  const height = window.innerHeight;
+let twoSvg = false;
+if(height > width){
+  twoSvg = true;
+}
 
- const sliderInput = useStore(state => state.cols);
-
- 
-  const cols = useStore(state => state.cols);
-  //nu vul ik met 20 tegels maar eigenlijk moeth et userinput * userinput
-
-
- const tiles = useStore(state => state.tiles);
-  const numberOfTiles = sliderInput * sliderInput;
-  const setTiles = useStore(state => state.numberOfTiles);
-
-
-  //const [tiles, setTiles] = useState(new Array(numberOfTiles).fill(false));
-
-
-  console.log(tiles);
- //    boxes.map((filled, i) => <Box filled={filled} index={i} key={i} cols={10} size={10} onClick={() => handleBoxClick(i)} />)
-
-const test = true;  
+  const tiles = useStore(state => state.tiles);
   const patternselection = useStore(state => state.patternselection);
+  
   let pattern1 = false;
   let pattern2 = false;
+  let pattern3 = false;
+  let pattern4 = false;
 
-   if(patternselection == 'cross'){
+   if(patternselection == 'pattern1'){
      pattern1 = true;
   }
 
-  if(patternselection == 'polygon'){
+  if(patternselection == 'pattern2'){
      pattern2 = true;
   }
-
-  /*
-   if(patternselection == 'polygon'){
-     console.log('ja');
-     pattern1 = false;
-    pattern2 = true;
-  }*/
+  if(patternselection == 'pattern3'){
+     pattern3 = true;
+  }
+  if(patternselection == 'pattern4'){
+     pattern4 = true;
+  }
 
   return (
     <> 
@@ -55,16 +47,42 @@ const test = true;
           {`.cls-1{fill:#3c51a2;stroke:#000;stroke-miterlimit:10;stroke-width:0.5px;}.cls-2{fill:#0c0d0d;}.cls-3{fill:#e9e4e6;}`}
         </style>
       </defs>
-{/*if statements zetten en op basis daarvan andere component inladen */}
       {pattern1 &&  
       tiles.map((filled, i) => <Pattern1 index = {i} key={i}/>)
       }
        {pattern2 &&  
       tiles.map((filled, i) => <Pattern2 index = {i} key={i}/>)
       }
-      
+       {pattern3 &&  
+      tiles.map((filled, i) => <Pattern3 index = {i} key={i}/>)
+      }
+      {pattern4 &&  
+      tiles.map((filled, i) => <Pattern4 index = {i} key={i}/>)
+      }
     </svg>
-           </>
+       {/*Second svg on mobile */}
+          {twoSvg && 
+            <svg viewBox="0 0 100 100">
+              <defs>
+                <style>
+                  {`.cls-1{fill:#3c51a2;stroke:#000;stroke-miterlimit:10;stroke-width:0.5px;}.cls-2{fill:#0c0d0d;}.cls-3{fill:#e9e4e6;}`}
+                </style>
+              </defs>
+              {pattern1 &&  
+              tiles.map((filled, i) => <Pattern1 index = {i} key={i}/>)
+              }
+              {pattern2 &&  
+              tiles.map((filled, i) => <Pattern2 index = {i} key={i}/>)
+              }
+              {pattern3 &&  
+              tiles.map((filled, i) => <Pattern3 index = {i} key={i}/>)
+              }
+              {pattern4 &&  
+              tiles.map((filled, i) => <Pattern4 index = {i} key={i}/>)
+              }
+            </svg>
+          }
+    </>
     
   );
 };

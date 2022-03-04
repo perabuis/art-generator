@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useStore } from "../store";
 
-import './Slider.css';
 
 const Slider = ({}) => {
   const cols = useStore(state => state.cols);

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useStore } from "../store";
 
 
-const Pattern2 = ({index}) => {
+const Pattern4 = ({index}) => {
     const colors = useStore(state => state.colors);
     const sliderInput = useStore(state => state.cols);
   
@@ -10,13 +10,13 @@ const Pattern2 = ({index}) => {
     const size = 100 / sliderInput;
     const scale = size / 100;
     let xPosition = index % sliderInput;
-    xPosition = (xPosition * size);
+    xPosition = xPosition * size;
     let yPosition = Math.floor(index / sliderInput);
     yPosition = yPosition * size;
 
     //determine style
     const tileStyling1 = {
-      fill: '#bdccd4'
+          fill: colors.primary,
     };
     const tileStyling2 = {
       fill: '#1c1f36'
@@ -34,30 +34,10 @@ const Pattern2 = ({index}) => {
   const tileStyling5 = {
       fill:'#60342b'
     }
-
-    let  rotation = '';
-  //  if(sliderInput % 2 == 1) {
-        if (index % 2 == 0){
-          xPosition = xPosition + size;
-          rotation = 'scale(-1,1)'
-        }
-        else {
-          rotation = 'scale(1,1)'
-        }
- //  }
-  /*  if(sliderInput % 2 == 0) {
-        if (index % 2 == 1){
-         // xPosition = xPosition + size;
-          rotation = 'scale(1,-1)'
-        }
-        else {
-          rotation = 'scale(1,1)'
-        }
-   }*/
   
   return (
     <>
-         <g   transform={` translate(${xPosition},${yPosition}) scale(${scale}) ${rotation}`} >
+         <g  transform={` translate(${xPosition},${yPosition}) scale(${scale}) `}>
       
 <rect style={tileStyling1} x="0.25" y="0.25" width="99.49" height="99.5"/>
 <polygon style={tileStyling2} points="73.81 62.32 75.36 65.56 78.72 66.86 77.53 70.25 78.98 73.54 75.74 75.1 74.45 78.45 71.05 77.26 67.77 78.72 66.21 75.47 62.85 74.18 64.05 70.79 62.59 67.5 65.83 65.94 67.12 62.59 70.52 63.78 73.81 62.32"/>
@@ -108,11 +88,11 @@ const Pattern2 = ({index}) => {
   );
 };
 
-Pattern2.defaultProps = {
+Pattern4.defaultProps = {
  // min: 0
 }
 
-Pattern2.propTypes = {
+Pattern4.propTypes = {
  /* onValueChange: PropTypes.func.isRequired,
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
@@ -120,4 +100,4 @@ Pattern2.propTypes = {
   label: PropTypes.string.isRequired,*/
 };
 
-export default Pattern2;
+export default Pattern4;

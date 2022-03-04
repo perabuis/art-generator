@@ -6,14 +6,12 @@ const Radio = ({}) => {
   const patternselection = useStore(state => state.patternselection);
   const setPatternselection = useStore(state => state.setPatternselection);
  
-  //setCols(parseInt(e.target.value, 10)
   return (
     <>  
-  
      <div>
-        <input type="radio" value="cross" name="gender"   onClick={(e) => setPatternselection(e.target.value)} /> Modern
-        <input type="radio" value="polygon" name="gender" onClick={(e) => setPatternselection(e.target.value)}/> Traditional
-        <input type="radio" value="other" name="gender" onClick={(e) => setPatternselection(e.target.value)}/> Abstract
+        <input type="radio" value="pattern1" name="pattern"   onClick={(e) => setPatternselection(e.target.value)} /> Modern
+        <input type="radio" value="pattern2" name="pattern" onClick={(e) => setPatternselection(e.target.value)}/> Traditional
+        <input type="radio" value="pattern3" name="pattern"  onClick={(e) => setPatternselection(e.target.value)}/> Abstract
       </div>
   
     </>
