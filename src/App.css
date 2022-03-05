@@ -66,3 +66,10 @@ body {
   color: #fff
 }
 
+
+@media only screen and (max-width: 550px) {
+  .inputs {
+    bottom: -100px;
+    max-width: 15rem;
+  }
+}

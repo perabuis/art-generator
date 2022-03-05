@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useStore } from "../store";
 
 const randomColor = require('randomcolor');
@@ -41,7 +40,6 @@ const Pattern2 = ({index}) => {
     }
 
     let  rotation = '';
-  //  if(sliderInput % 2 == 1) {
         if (index % 2 == 0){
           xPosition = xPosition + size;
           rotation = 'scale(-1,1)'
@@ -49,16 +47,6 @@ const Pattern2 = ({index}) => {
         else {
           rotation = 'scale(1,1)'
         }
- //  }
-  /*  if(sliderInput % 2 == 0) {
-        if (index % 2 == 1){
-         // xPosition = xPosition + size;
-          rotation = 'scale(1,-1)'
-        }
-        else {
-          rotation = 'scale(1,1)'
-        }
-   }*/
   
   return (
     <>
@@ -111,18 +99,6 @@ const Pattern2 = ({index}) => {
 </g>
     </>
   );
-};
-
-Pattern2.defaultProps = {
- // min: 0
-}
-
-Pattern2.propTypes = {
- /* onValueChange: PropTypes.func.isRequired,
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,*/
 };
 
 export default Pattern2;

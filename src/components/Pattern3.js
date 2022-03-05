@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useStore } from "../store";
 
 const Pattern3 = ({index}) => {
@@ -50,16 +49,5 @@ const Pattern3 = ({index}) => {
   );
 };
 
-Pattern3.defaultProps = {
- // min: 0
-}
-
-Pattern3.propTypes = {
- /* onValueChange: PropTypes.func.isRequired,
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,*/
-};
 
 export default Pattern3;

@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
 import { useStore } from "../store";
-//import chroma from "chroma-js";
 
 const Pattern1 = ({index}) => {
     const colors = useStore(state => state.colors);
@@ -17,7 +15,7 @@ const Pattern1 = ({index}) => {
     //styling tiles
     const tileStyling1 = {
       fill: colors.primary,
-      stroke:'#000',
+      stroke:colors.secondary,
       strokeMiterlimit:10
     };
     const tileStyling2 = {
@@ -43,18 +41,6 @@ const Pattern1 = ({index}) => {
         </g>
     </>
   );
-};
-
-Pattern1.defaultProps = {
- // min: 0
-}
-
-Pattern1.propTypes = {
- /* onValueChange: PropTypes.func.isRequired,
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,*/
 };
 
 export default Pattern1;

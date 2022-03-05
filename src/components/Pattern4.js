@@ -1,11 +1,8 @@
-import PropTypes from "prop-types";
 import { useStore } from "../store";
 
 const randomColor = require('randomcolor');
 const strangeColor = randomColor();
 const strangeColor2 = randomColor();
-const strangeColor3 = randomColor();
-
 
 const Pattern4 = ({index}) => {
     const colors = useStore(state => state.colors);
@@ -22,7 +19,7 @@ const Pattern4 = ({index}) => {
     //determine style
     const tileStyling1 = {
           fill: colors.tertiary,
-          stroke: "#434854",
+          stroke: colors.secondary,
           strokeMiterlimit:10,
           strokeWidth:0.5
     };
@@ -67,18 +64,6 @@ const Pattern4 = ({index}) => {
       </g>
     </>
   );
-};
-
-Pattern4.defaultProps = {
- // min: 0
-}
-
-Pattern4.propTypes = {
- /* onValueChange: PropTypes.func.isRequired,
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,*/
 };
 
 export default Pattern4;

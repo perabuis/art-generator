@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
 import { useStore } from "../store";
-
 
 const Slider = ({}) => {
   const cols = useStore(state => state.cols);
@@ -13,8 +11,7 @@ const Slider = ({}) => {
     setCols(sliderInput);
     setTiles(new Array(sliderInput * sliderInput).fill(false));
   };
- 
-  //setCols(parseInt(e.target.value, 10)
+
   return (
     <>   
     <label>
@@ -26,7 +23,7 @@ const Slider = ({}) => {
         value={cols}
         onChange={(e) => handleSliderChange(e)}
       />
-      <span>{cols} rows and colums</span>
+      <span>{cols} rows / columns</span>
     </label>
    
     </>
@@ -34,34 +31,4 @@ const Slider = ({}) => {
   );
 };
 
-Slider.defaultProps = {
-  //min: 0
-}
-
-Slider.propTypes = {
- /* onValueChange: PropTypes.func.isRequired,
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,*/
-};
-
 export default Slider;
-
-
-/*
-const Slider = ({ onValueChange, value, max, min, label }) => {
-  return (
-    <label>
-      <span>{label}</span>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={value}
-        onChange={(e) => onValueChange(parseInt(e.target.value, 10))}
-      />
-      <span>{value}</span>
-    </label>
-  );
-};*/

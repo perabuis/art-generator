@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useStore } from "../store";
 import Pattern1 from "./Pattern1.js";
 import Pattern2 from "./Pattern2.js";
@@ -6,20 +5,19 @@ import Pattern3 from "./Pattern3.js";
 import Pattern4 from "./Pattern4.js";
 
 
-//import './Grid.css';
-
 const Grid = () => {
-//number of svg's for mobile
+//Extra svg on mobile
  const width =  window.innerWidth;
  const height = window.innerHeight;
-let twoSvg = false;
-if(height > width){
-  twoSvg = true;
-}
+  let twoSvg = false;
+  if(height > width){
+    twoSvg = true;
+  }
 
   const tiles = useStore(state => state.tiles);
   const patternselection = useStore(state => state.patternselection);
   
+  //each pattern has different styling / rotation, so I created 4 different components per pattern
   let pattern1 = false;
   let pattern2 = false;
   let pattern3 = false;
@@ -85,18 +83,6 @@ if(height > width){
     </>
     
   );
-};
-
-Grid.defaultProps = {
-  //min: 0
-}
-
-Grid.propTypes = {
- /* onValueChange: PropTypes.func.isRequired,
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,*/
 };
 
 export default Grid;
